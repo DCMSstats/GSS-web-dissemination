@@ -15,6 +15,7 @@ The below is a list of GSS web dissemination examples. It is not necessarily com
 * [All ONS publications](https://www.ons.gov.uk/atoz) for example: [this](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/drugusealcoholandsmoking/bulletins/opinionsandlifestylesurveyadultdrinkinghabitsingreatbritain/2017)
 
 ## gov.uk HTML publications:  
-Please can somebody share an examples of where markdown has been used for a statistical publication?
-
+* [DEFRA](https://www.gov.uk/government/statistics/food-statistics-pocketbook-2017)
+* [DEFRA](https://www.gov.uk/government/statistics/family-food-201617)
+* [DEFRA](https://www.gov.uk/government/statistics/food-chain-productivity)
 
