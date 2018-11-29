@@ -5,11 +5,13 @@ The below is a list of GSS web dissemination examples. It is not necessarily com
 ## Interactive tools/data:  
 * http://njs.analysisoncbas.co.uk/  
 * https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml  
+* http://opendatacommunities.org/home  
 * https://iu.opendatacommunities.org/  
 * https://churchill-beta.dwp.gov.uk  
 * http://data.justice.gov.uk/  
 * https://www.nrscotland.gov.uk/statistics-and-data/statistics/stats-at-a-glance/infographics-and-visualisations  
 * https://www.nomisweb.co.uk/  
+* https://www.ethnicity-facts-figures.service.gov.uk/  
 
 ## Off-gov.uk stats publications:  
 * [HRMC](https://kai-data-exploitation.github.io/monthly-stamp-duty-ns-output/msdlt_spine.html)  
