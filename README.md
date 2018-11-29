@@ -9,6 +9,7 @@ The below is a list of GSS web dissemination examples. It is not necessarily com
 * https://churchill-beta.dwp.gov.uk  
 * http://data.justice.gov.uk/  
 * https://www.nrscotland.gov.uk/statistics-and-data/statistics/stats-at-a-glance/infographics-and-visualisations  
+* https://www.nomisweb.co.uk/  
 
 ## Off-gov.uk stats publications:  
 * [HRMC](https://kai-data-exploitation.github.io/monthly-stamp-duty-ns-output/msdlt_spine.html)  
