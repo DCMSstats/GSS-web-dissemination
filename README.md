@@ -3,15 +3,16 @@ Further information, and guidance on best practices, can be found on the GSS web
 The below is a list of GSS web dissemination examples. It is not necessarily complete or shows best practice. The intention is to provide examples of different approaches and facilitate innovation and consistency.
 
 ## Interactive tools/data:  
-* [njs.analysisoncbas.co.uk](njs.analysisoncbas.co.uk)  
-* [stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml](stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml)  
-* [opendatacommunities.org](opendatacommunities.org)  
-* [iu.opendatacommunities.org](iu.opendatacommunities.org)  
-* [churchill-beta.dwp.gov.uk](churchill-beta.dwp.gov.uk)  
-* [data.justice.gov.uk](data.justice.gov.uk)  
-* [nrscotland.gov.uk/statistics-and-data/statistics/stats-at-a-glance/infographics-and-visualisations](nrscotland.gov.uk/statistics-and-data/statistics/stats-at-a-glance/infographics-and-visualisations)  
-* [nomisweb.co.uk](nomisweb.co.uk)  
-* [ethnicity-facts-figures.service.gov.uk](ethnicity-facts-figures.service.gov.uk)  
+* [njs.analysisoncbas.co.uk](http://njs.analysisoncbas.co.uk/)  
+* [stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml](https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml)  
+* [opendatacommunities.org](http://opendatacommunities.org/home)  
+* [iu.opendatacommunities.org](https://iu.opendatacommunities.org/)  
+* [churchill-beta.dwp.gov.uk](https://churchill-beta.dwp.gov.uk)  
+* [data.justice.gov.uk](http://data.justice.gov.uk/)  
+* [nrscotland.gov.uk/statistics-and-data/statistics/stats-at-a-glance/infographics-and-visualisations](https://www.nrscotland.gov.uk/statistics-and-data/statistics/stats-at-a-glance/infographics-and-visualisations)  
+* [nomisweb.co.uk](https://www.nomisweb.co.uk/)  
+* [ethnicity-facts-figures.service.gov.uk](https://www.ethnicity-facts-figures.service.gov.uk/)  
+
 
 ## Off-gov.uk stats publications:  
 * [HRMC](https://kai-data-exploitation.github.io/monthly-stamp-duty-ns-output/msdlt_spine.html)  
