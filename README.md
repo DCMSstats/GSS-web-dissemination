@@ -1,5 +1,5 @@
 # Examples of GSS web dissemination
-Further information, and guidance on best practices, can be found on the GSS website [here](https://gss.civilservice.gov.uk/guidances/communicating-statistics/).
+Examples of web based (HTML not PDF) GSS dissemination. Further information, and guidance on best practices, can be found on the GSS website [here](https://gss.civilservice.gov.uk/guidances/communicating-statistics/).
 The below is a list of GSS web dissemination examples. It is not necessarily complete or shows best practice. The intention is to provide examples of different approaches and facilitate innovation and consistency.
 
 ## Interactive tools/data:  
