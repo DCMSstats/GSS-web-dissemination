@@ -53,7 +53,7 @@ Codifying our pipeline, and using industry standard tools like Python, allows us
 A better approach is to automate the process entirely, for example using VBA, Python, or R to programmatically read in the csv.
 
 Git is needed for version control.
-Environments need to be managed to ensure code executes as expected.
+Environments need to be managed to ensure code executes as expected. Taking account of difference between, for example, Windows and OSx.
 
 When?  
 Reproducibility is incredibly important for analysis to ensure it can be properly QA’d. open analysis to ensure that it is actually useable
