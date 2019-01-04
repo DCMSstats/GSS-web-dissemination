@@ -66,6 +66,8 @@ There are times that the source will need to be added to. In this case it is imp
 In the case where the source code needs to be updated and is expected to produce different results, the version number is stepped, so that users (and tests) know which version to use to reproduce which publications.
 There are also other aspects for which it is important to have consistency. For example the format of outputted data. For statistical publications, it does not cause major problems if number formats, column headings etc change unpredictably. But if the output data is to be integrated into another project it could be essential for the format to remain consistent, in which case this code should also be included in the source code and tests written.
 
+An example of this is separating the 'source code' into an R package that is version controlled, and then called by each publication, ensuring consistency across publications. This is the approach taken by DfE.
+
 ## Openness
 Openness is important for transparency, to build trust, allow external QA and collaboration. One approach would be to share data analysis code in a public Github repository which is linked to from the publication.
 Readability and Best Practices
