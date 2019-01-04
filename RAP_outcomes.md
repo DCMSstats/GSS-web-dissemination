@@ -58,7 +58,8 @@ Environments need to be managed to ensure code executes as expected.
 When?  
 Reproducibility is incredibly important for analysis to ensure it can be properly QA’d. open analysis to ensure that it is actually useable
 It is also important even for non open analysis, to ensure that results can be audited and veryify internally that 
-Consistency
+
+## Consistency
 For an adhoc piece of analysis, it might be sufficient to write analysis code from scratch.
 For repeated analysis, for example something like a statistical publication, it is important to ensure that the results of each analysis are consistent where expected. This means using the same data analysis functions, package versions, etc between analysis. The best way to achieve this is to store code that does the data analysis separately as ‘source code’, and for each publication of the analysis, code is written specific to that analysis, for example presentation or data sources change, but the source code performs the analysis which ensures it is consistent across publications.
 There are times that the source will need to be added to. In this case it is important to have tests written to ensure it still produces the same results for all the previous publications it was used for.
