@@ -1,28 +1,35 @@
 # Reproducible Analysis Approaches in Government
 
-There are lots of different approaches and levels of sophistication to producing reproducible analysis in government. I thought it would be useful to lay this out to help people understand why they are using a RAP approach, and which approach best meets their needs.
+There are lots of different approaches and levels of sophistication to producing reproducible analysis in government. I thought it would be useful to lay this out to help people understand why you would use various approaches.
 
-There is often confusion around how and why a more sophisticated approach should be taken, which this article aims to address.
+This article aims to address confusion around how and why a more sophisticated approach is taken.
 
 I will refer to all data processing and analysis pipelines simply as pipelines.
 
 ## Automation
-Automation is achieved by codifying pipelines. This can be done with legacy tools such as SPSS, VBA, SAS. Or modern tools such as Python or R.
+Automation is achieved by codifying pipelines. This can be done with legacy tools such as SPSS, VBA, SAS; or modern tools such as Python and R.
 
-Why? 
-Automation can increase efficiency by removing the often time consuming of processing data manually, for example in Excel, or point and click functionality of tools like SPSS. This is especially important in cases where for example, a time consuming pipeline has been manually processed, and then the underlying data needs to be changed or a mistake was made in the process. The entire process might need to be repeated, and this could happen multiple times. Automation means that time spent rerunning the pipeline is trivial.  
-Automation removes the possibility of errors and mistakes that can be introduced by manual processes, for example copy and paste errors.
+### Benefits
+1. Automation removes the possibility of errors and mistakes that can be introduced by manual processes, for example copy and paste errors.  
+1. Automation can increase efficiency by removing the, often time consuming, manual data processing. For example in Excel, or point and click functionality of tools like SPSS. This is efficiency is especially important in cases where the data processing might need to be run multiple times. For example, the underlying data changes, or a mistake was found during quality assurance of the outputs. The entire process might need to be repeated, and this could happen multiple times. Automation means that time spent rerunning the pipeline is trivial.  
+1. It is also a necessary precursor to the below approaches for reproducibility and consistency.
+1. Improves transparency and trust. If the data process is codified, by reading the data directly from it's source, and no data is 'hard-coded', then the code can often be shared as open source code, without disclosing any sensitive information in the underlying data. Whereas for example, a pipeline comprising of excel files usually cannot be shared as easily.  
+For example, for a statistical publication, all underlying data can be stored in a CSV file(s). The automaton code reads the data directly from this CSV to populate all figures in the publication: summary tables, figures interspersed in text, self serve data tools, etc. This approach builds trust as the CSV is a single source of truth, the exact steps taken do process the data are shared, and eliminates any 'copy and pasting' errors.
 
-When to use?  
-Automation is important to ensure value for money and efficiency especially when manual pipelines take non-trivial amounts of time to process. For example if a process takes 2 days and is rerun multiple times, automation would save a significant amount of time.
-It is also a necessary precursor to the below approaches for reproducibility and consistency.
-
-Comparison of tools:  
+### Comparison of tools
 Whilst legacy tools are all mostly capable of reading and processing data, they have limitations. 
 Modern tools have better support for:  
-reading a diverse range of data formats.  
-VBA is primarily for working with Excel data and isn’t as easy to work with external data such as CSV.  
-Web scraping and APIs. SPSS and SAS have no support for web scraping.  
+1. Reading a diverse range of data formats. VBA is primarily for working with Excel data and isn’t as easy to work with external data such as CSV, APIs, databases.  
+1. Web scraping and APIs. SPSS and SAS have no support for web scraping or consuming data from APIs.
+make table highlighting which tools have different functionality.
+When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Most tools provide support for writing functions.
+
+Tool/Language|APIs|Databases
+SPSS
+SAS
+VBA
+R
+Python
 
 ## Reproducibility
 Reproducibility allows other to rerun your analysis. There is varying levels of sophistication to reproducibility.
