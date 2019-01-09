@@ -24,15 +24,20 @@ Modern tools have better support for:
 make table highlighting which tools have different functionality.
 When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Most tools provide support for writing functions.
 
-Tool/Language|APIs|Databases
----|---|---
-SPSS||
-SAS||*
-VBA|*|
-R|*|*
-Python|*|*
+Appropriate tools/languages for different functionality
+Tool/Language|APIs|Databases|Web Scraping
+---|---|---|---
+SPSS|||
+SAS||*|
+VBA|*||*
+R|*|*|*
+Python|*|*|*
 
 ## Reproducibility
+Reproducibility is about ensuring any particular run of a pipline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we would often want anybody to be able to exactly reproduce the results on any machine. This requires a few things:
+1. The same version of the code is used. The best way to do this is to version control your code with github. This means the version of your code used for the run in question can be locked and recorded as a snapshot (commit), and the code can be easily shared with others via services like github.  
+1. The same version of the software and it's dependencies are used. If the code is rerun at a later date, the user may have installed a more recent version of the software.
+1. The code is designed to run on multiple operating systems. For example, Windows uses different path notation than linux based operating systems like Mac OS
 Reproducibility allows other to rerun your analysis. There is varying levels of sophistication to reproducibility.
 Access to underlying data. All pipelines are only reproducible if you have access to the underlying data. Ensuring that the correct people have access to the underlying data is important.
 
