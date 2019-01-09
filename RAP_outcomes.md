@@ -25,11 +25,12 @@ make table highlighting which tools have different functionality.
 When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Most tools provide support for writing functions.
 
 Tool/Language|APIs|Databases
-SPSS
-SAS
-VBA
-R
-Python
+---|---|---
+SPSS||
+SAS||*
+VBA|*|
+R|*|*
+Python|*|*
 
 ## Reproducibility
 Reproducibility allows other to rerun your analysis. There is varying levels of sophistication to reproducibility.
