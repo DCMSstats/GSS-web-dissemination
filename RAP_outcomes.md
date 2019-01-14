@@ -24,8 +24,10 @@ Modern tools have better support for:
 make table highlighting which tools have different functionality.
 When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Most tools provide support for writing functions.
 
+This approach still has drawbacks. Tools like SAS and SPSS have limited functionality which means part of the pipeline needs to be performed in Excel, which adds manual components to the pipeline.
+
 Appropriate tools/languages for different functionality
-Tool/Language|APIs|Databases|Web Scraping
+Tool/Language|APIs|Databases|Web Scraping|manipulate excel files|create PDFS|create web pages
 ---|---|---|---
 SPSS|||
 SAS||*|
@@ -34,34 +36,24 @@ R|*|*|*
 Python|*|*|*
 
 ## Reproducibility
-Reproducibility is about ensuring any particular run of a pipline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we would often want anybody to be able to exactly reproduce the results on any machine. This requires a few things:
+Reproducibility is about ensuring any particular run of a pipline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we often want for anybody, using any machine, to be able to exactly reproduce the results. This requires a few things:
 1. The same version of the code is used. The best way to do this is to version control your code with github. This means the version of your code used for the run in question can be locked and recorded as a snapshot (commit), and the code can be easily shared with others via services like github.  
-1. The same version of the software and it's dependencies are used. If the code is rerun at a later date, the user may have installed a more recent version of the software.
-1. The code is designed to run on multiple operating systems. For example, Windows uses different path notation than linux based operating systems like Mac OS
-Reproducibility allows other to rerun your analysis. There is varying levels of sophistication to reproducibility.
-Access to underlying data. All pipelines are only reproducible if you have access to the underlying data. Ensuring that the correct people have access to the underlying data is important.
+1. The same version of the software and it's dependencies are used. If the code is rerun at a later date, the user may have installed a more recent version of the software. With legacy tools this is generally not a problem as the software is a complete package. Open source tools like R and Python have different dependencies to run on different machines, and make use of user written packages. R has some limited tools to help with this, Python has mature, reliable tools which solve this.
+1. The code itself is designed to run on multiple operating systems. For example, Windows uses different path notation than linux based operating systems like Mac OS.
+1. The code is written to run directly from source data that other users will also have access to.
+1. It is not completely necessary, but it is far better if the software is designed in a way that to use it is intuitive and requires minimal documentation, this forces developers to consider the usability of their code and not rely on increasingly complex instructions.  The documentation that there is, is stored in the code in either a README.md or docs files. Useful information can be stored in comments in the code but crtitical information should be made as readily availble to the user as possible, ideally in the README or docs. It is better to store instructions as part of the project as it is better for ensuring the instructions are mainted, updated, and distributed along with the code. The fact that the instructions are not tied to the process and tools, means that as tools get updated to new versions, or the process gets updated, the document becomes inaccurate and potentially unusable.
+For example, users can check commits to see when docs where last updated. Instructions stored in shared drives have no version control, and require the user to know where they are saved, and have access to the shared drive.
 
-Naive approach:
-The most basic approach to reproducibility is to write a desk notes style document detailing the steps someone can take to go from raw data to output. This could be something like:  
-Load /shared-drive/data/raw_data2010.csv into SPSS  
-Choose summarise by category and year from the dropdown menu  
-Output to excel  
-Copy output into output tab in /share-drive/publications/publication_2010.xlsx  
-
-The fact that the instructions are not tied to the process and tools, means that as tools get updated to new versions, or the process gets updated, the document becomes inaccurate and potentially unusable.
-
-A better approach is to codify the process as much as possible. You could create an SPSS script which loads the data, summarises and saves to Excel. The scripts itself documents the process so we aren’t reliant on up to date documentation.
-
-This approach still has drawbacks. Tools like SAS and SPSS have limited functionality which means part of the pipeline needs to be performed in Excel, which adds manual components to the pipeline.
-
-Using Python or R typically means the entire pipeline can be codified in script, since they have support reading the vast majority of data formats, can programmatically excel files and pdfs or word documents etc. examples
-
-All things being equal, if I write an R or Python script for my pipeline, I can’t rerun it as many times as I want, producing identical output, with the click off a button. However we still face limitations. If a colleague
 
 Where raw data is stored  
 Even if the most sophisticated approach is taken, if the location of the raw data cannot be readily found, the pipeline fails at the first hurdle. For example, if our data is excel files or csvs, that are stored on a drive or server somewhere, they might be moved, renamed, or moved to a new updated server, all of which will break previous file paths. The ideal situation is to aim to get data from the source, e.g. the database where it is stored and csvs etc are output from. The source database is far less likely to move location or be renamed, since it is part of would developers would refer to as a production environment, and is maintained by developers. Reproducibility is default in the world of developers and as such things typically remain constant since it is part of standard working practice (this is part of the reason why it can be hard to reform and innovate IT).
 
-Codifying our pipeline, and using industry standard tools like Python, allows us to integrate with other systems, for example integrating a statistical publication with the GSS data project.
+
+## Integration
+If we have automated our pipeline, and made it reproducible, we have the possibility of integrating our code into other systems, for example:
+using the same data cleaning functions in a data tool/dashboard.
+Running on a platform like the GSS data tool, for example integrating a statistical publication with the GSS data project.
+This requires using industry standard tools like Python, R is not a proper programming language.
 
 A better approach is to automate the process entirely, for example using VBA, Python, or R to programmatically read in the csv.
 
