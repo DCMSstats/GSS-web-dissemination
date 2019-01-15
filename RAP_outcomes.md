@@ -48,8 +48,7 @@ For example, users can check commits to see when docs where last updated. Instru
 Where raw data is stored  
 Even if the most sophisticated approach is taken, if the location of the raw data cannot be readily found, the pipeline fails at the first hurdle. For example, if our data is excel files or csvs, that are stored on a drive or server somewhere, they might be moved, renamed, or moved to a new updated server, all of which will break previous file paths. The ideal situation is to aim to get data from the source, e.g. the database where it is stored and csvs etc are output from. The source database is far less likely to move location or be renamed, since it is part of would developers would refer to as a production environment, and is maintained by developers. Reproducibility is default in the world of developers and as such things typically remain constant since it is part of standard working practice (this is part of the reason why it can be hard to reform and innovate IT).
 
-
-## Integration
+## Integration
 If we have automated our pipeline, and made it reproducible, we have the possibility of integrating our code into other systems, for example:
 using the same data cleaning functions in a data tool/dashboard.
 Running on a platform like the GSS data tool, for example integrating a statistical publication with the GSS data project.
