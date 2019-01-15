@@ -24,16 +24,7 @@ Modern tools have better support for:
 make table highlighting which tools have different functionality.
 When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Most tools provide support for writing functions.
 
-This approach still has drawbacks. Tools like SAS and SPSS have limited functionality which means part of the pipeline needs to be performed in Excel, which adds manual components to the pipeline.
-
-Appropriate tools/languages for different functionality
-Tool/Language|APIs|Databases|Web Scraping|manipulate excel files|create PDFS|create web pages
----|---|---|---
-SPSS|||
-SAS||*|
-VBA|*||*
-R|*|*|*
-Python|*|*|*
+This approach still has drawbacks. Tools like SAS and SPSS have limited functionality which means part of the pipeline might need to be performed in Excel, which adds manual components to the pipeline.
 
 ## Reproducibility
 Reproducibility is about ensuring any particular run of a pipline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we often want for anybody, using any machine, to be able to exactly reproduce the results. This requires a few things:
