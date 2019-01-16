@@ -17,39 +17,19 @@ For example, for a statistical publication, all underlying data can be stored in
 ### Comparison of tools
 Whilst legacy tools are all mostly capable of reading and processing data, they have limitations. 
 Modern tools have better support for:  
-1. Reading a diverse range of data formats. For example, VBA is primarily for working with Excel data and isn’t as easy to work with external data such as CSV, APIs, databases.  
-1. Web scraping and APIs. SPSS and SAS have no support for web scraping or consuming data from APIs.
-1. Modularising code. When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Essentatially, writing code as well thought out piece of software, using best practices, rather than one long script or a collection of scripts. Modern tools like Python have much better support for modularising code and writing clean software.
+1. Reading a diverse range of data formats. For example, VBA is primarily for working with Excel data and isn’t as easy to work with external data such as CSV, APIs, databases. SPSS and SAS have no support for web scraping or consuming data from APIs.
+1. Modularising code. When automating, it is best practice to modularise code to simplify it, make it more easily reusable, easier to maintain, and quicker to debug. Essentatially, writing code as well thought out piece of software, using best practices, rather than one long script or a collection of scripts. Modern tools like Python have much better support for modularising code and writing clean, realiable software.
 1. Creating outputs. Modern tools have much better support for producing outputs such as charts, web pages, formatted spreadsheets, etc. Tools like SAS and SPSS have limited functionality which means part of the pipeline might still need to be performed in Excel, which adds manual components to the pipeline.
 
 ## Reproducibility
-Reproducibility is about ensuring any particular run of a pipline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we often also want anybody (with access to the source data), using any machine, to be able to exactly reproduce the results and outputs. This requires a few things:
+Reproducibility is about ensuring any particular run of a pipline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we often also want anybody (with access to the source data), using any machine, to be able to exactly reproduce the results and outputs. For example, this allows analysis to be peer reviewed by anyone which access to the source data. Even for non-public analysis this is important, to ensure that results can be audited and veryified internally. This requires a few things:
 1. The same version of the code is used. The best way to do this is to version control your code with github. This means the version of your code used for the run in question can be locked and recorded as a snapshot (commit), and the code can be easily shared with others via services like github. 
 Simply save scripts as v1, v2 etc is not sufficient. There is no way to guarantee or check that any changes to v1 haven't been made since it was last run.
 1. The same version of the software and it's dependencies are used. If the code is rerun at a later date, the user may have installed a more recent version of the software. With legacy tools this is generally not a problem as they function as standalone software without dependencies on other software. Open source tools like R and Python have different dependencies to run on different machines, and make use of user written packages. R has some limited tools to help with this, Python has mature, reliable tools which solve this.
-1. The code itself is designed to run on multiple operating systems. For example, Windows uses backslash in paths whereas linux based operating systems like Mac OS use forwardslash.
-1. The code is written to run directly from source data that other users will also have access to. Source data
-1. It is not completely necessary, but it is far better if the software is designed in a way that to use it is intuitive and requires minimal documentation, this forces developers to consider the usability of their code and not rely on increasingly complex instructions.  The documentation that there is, is stored in the code in either a README.md or docs files. Useful information can be stored in comments in the code but crtitical information should be made as readily availble to the user as possible, ideally in the README or docs. It is better to store instructions as part of the project as it is better for ensuring the instructions are mainted, updated, and distributed along with the code. The fact that the instructions are not tied to the process and tools, means that as tools get updated to new versions, or the process gets updated, the document becomes inaccurate and potentially unusable.
+1. The code itself is designed to run on multiple operating systems. For example, Windows uses backslash in paths whereas unix based operating systems like OS X use forwardslash.
+1. The code is written to run directly from source data that other users will also have access to. Ensuring all parties are using the same data as a single source of truth and cleaning the data in the same way from the same point.
+1. Ensuring they are sufficient and accurate instructions to run the pipeline. It is not completely necessary, but it is far better if the software is designed in a way that to use it is intuitive and requires minimal documentation, this forces developers to consider the usability of their code and not rely on increasingly complex wrtitten instructions. The documentation that there is, is stored in the code in either a README.md or docs files. Useful information can be stored in comments in the code but crtitical information should be made as readily availble to the user as possible, ideally in the README or docs. It is better to store instructions as part of the project as it is better for ensuring the instructions are mainted, updated, and distributed along with the code. If instructions are not tied to the process and tools and stored separately as a standalone document, then as code get updated to new versions, the instructions becomes inaccurate and potentially unusable.
 For example, users can check commits to see when docs where last updated. Instructions stored in shared drives have no version control, and require the user to know where they are saved, and have access to the shared drive.
-
-
-Where raw data is stored  
-Even if the most sophisticated approach is taken, if the location of the raw data cannot be readily found, the pipeline fails at the first hurdle. For example, if our data is excel files or csvs, that are stored on a drive or server somewhere, they might be moved, renamed, or moved to a new updated server, all of which will break previous file paths. The ideal situation is to aim to get data from the source, e.g. the database where it is stored and csvs etc are output from. The source database is far less likely to move location or be renamed, since it is part of would developers would refer to as a production environment, and is maintained by developers. Reproducibility is default in the world of developers and as such things typically remain constant since it is part of standard working practice (this is part of the reason why it can be hard to reform and innovate IT).
-
-## Integration
-If we have automated our pipeline, and made it reproducible, we have the possibility of integrating our code into other systems, for example:
-using the same data cleaning functions in a data tool/dashboard.
-Running on a platform like the GSS data tool, for example integrating a statistical publication with the GSS data project.
-This requires using industry standard tools like Python, R is not a proper programming language.
-
-A better approach is to automate the process entirely, for example using VBA, Python, or R to programmatically read in the csv.
-
-Git is needed for version control.
-Environments need to be managed to ensure code executes as expected. Taking account of difference between, for example, Windows and OSx.
-
-When?  
-Reproducibility is incredibly important for analysis to ensure it can be properly QA’d. open analysis to ensure that it is actually useable
-It is also important even for non open analysis, to ensure that results can be audited and veryify internally that 
 
 ## Consistency
 For an adhoc piece of analysis, it might be sufficient to write analysis code from scratch.
@@ -65,8 +45,12 @@ Openness is important for transparency, to build trust, allow external QA and co
 Readability and Best Practices
 Within reason, at this point we should be able to reproduce a pipeline no matter what. However, realistically, if the code is not well written enough, it will not be reproduced, at least for the purpose of QA, or reuse for future. Modularisation and readability are therefore critical.
 
-## User Research
-Dfe research.
-
 ## Integration
-To integrate pipelines with other projects, for example a website, or the GSS data 
+If we have automated our pipeline, and made it reproducible, consistent, and open, written in a well supported language like Python, we will be in a good position integrating our code into other systems, for example:
+1. Using the same data cleaning functions in a data tool/dashboard.
+1. Use the code to create an API hosted on a different platform.
+1. Running on a platform like the GSS data project, for example integrating a statistical publication with the GSS data project.
+This requires using industry standard tools like Python, R is not a proper programming language.
+ 
+## Source data
+Even if the most sophisticated approach is taken, if the location of the raw data cannot be readily found, the pipeline fails at the first hurdle. For example, if our data is excel files or csvs, that are stored on a drive or server somewhere, they might be moved, renamed, or moved to a new updated server, all of which will break file paths pointing to the data. The ideal situation is to aim to get data from the source, e.g. the database where it is stored and csvs etc are output from. The source database is far less likely to move location or be renamed, and is more likely to be maintained  properly, using best practice (like making backups), by developers. For developers, reproducibility is critical to ensure services continue to work. It could be a good idea to make use of this to provide a solid foundation for a pipeline.
