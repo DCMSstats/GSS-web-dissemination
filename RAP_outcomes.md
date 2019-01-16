@@ -32,25 +32,21 @@ Simply save scripts as v1, v2 etc is not sufficient. There is no way to guarante
 For example, users can check commits to see when docs where last updated. Instructions stored in shared drives have no version control, and require the user to know where they are saved, and have access to the shared drive.
 
 ## Consistency
-For an adhoc piece of analysis, it might be sufficient to write analysis code from scratch.
-For repeated analysis, for example something like a statistical publication, it is important to ensure that the results of each analysis are consistent where expected. This means using the same data analysis functions, package versions, etc between analysis. The best way to achieve this is to store code that does the data analysis separately as ‘source code’, and for each publication of the analysis, code is written specific to that analysis, for example presentation or data sources change, but the source code performs the analysis which ensures it is consistent across publications.
+Consistency is about separating code for a pipeline into aspects that might be updated for each run of an analysis, from aspects that we want to remain constant for every run of a pipeline. For an adhoc piece of analysis, it might be sufficient to write analysis code from scratch. For repeated analysis, for example something like a statistical publication, it is important to ensure that the results of each analysis are consistent where expected. This means using the same functions for analysis and cleaning, package versions, etc, between analysis. The best way to achieve this is to store functions that do the data cleaning and analysis separately as ‘source code’, and for each publication of the analysis, code is written specific to that analysis, for example presentation or data sources change, but the source code performs the cleaning and analysis which ensures it is consistent across publications.
 There are times that the source will need to be added to. In this case it is important to have tests written to ensure it still produces the same results for all the previous publications it was used for.
-In the case where the source code needs to be updated and is expected to produce different results, the version number is stepped, so that users (and tests) know which version to use to reproduce which publications.
-There are also other aspects for which it is important to have consistency. For example the format of outputted data. For statistical publications, it does not cause major problems if number formats, column headings etc change unpredictably. But if the output data is to be integrated into another project it could be essential for the format to remain consistent, in which case this code should also be included in the source code and tests written.
+In the case where the source code needs to be updated and is expected to produce different results, the version number is incremented, so that users (and tests) know which version to use to reproduce which publications.
+There are also other aspects for which it is important to have consistency. For example the format of outputted data. For excel files in statistical publications, it does not cause major problems if number formats, column headings, end up getting changed over time and therefore are changing unpredictably. But if the output data is to be integrated into another project it could be essential for the format to remain consistent, in which case this code should also be included in the source code and tests written.
 
-An example of this is separating the 'source code' into an R package that is version controlled, and then called by each publication, ensuring consistency across publications. This is the approach taken by DfE.
+Python has good support for storing reusable code in a package and using the desired version of the package. R also supports packages, but they are more complicated to develop, and R does not readily support using previous versions.
 
 ## Openness
 Openness is important for transparency, to build trust, allow external QA and collaboration. One approach would be to share data analysis code in a public Github repository which is linked to from the publication.
-Readability and Best Practices
-Within reason, at this point we should be able to reproduce a pipeline no matter what. However, realistically, if the code is not well written enough, it will not be reproduced, at least for the purpose of QA, or reuse for future. Modularisation and readability are therefore critical.
 
 ## Integration
 If we have automated our pipeline, and made it reproducible, consistent, and open, written in a well supported language like Python, we will be in a good position integrating our code into other systems, for example:
-1. Using the same data cleaning functions in a data tool/dashboard.
-1. Use the code to create an API hosted on a different platform.
-1. Running on a platform like the GSS data project, for example integrating a statistical publication with the GSS data project.
-This requires using industry standard tools like Python, R is not a proper programming language.
+1. Hosting it on a cloud platform and automating runs.
+1. Producing web based products from the outputs, for example a data tool.
+1. Use the code to create an API to give users and other systems easy programatic access to the data.
  
 ## Source data
 Even if the most sophisticated approach is taken, if the location of the raw data cannot be readily found, the pipeline fails at the first hurdle. For example, if our data is excel files or csvs, that are stored on a drive or server somewhere, they might be moved, renamed, or moved to a new updated server, all of which will break file paths pointing to the data. The ideal situation is to aim to get data from the source, e.g. the database where it is stored and csvs etc are output from. The source database is far less likely to move location or be renamed, and is more likely to be maintained  properly, using best practice (like making backups), by developers. For developers, reproducibility is critical to ensure services continue to work. It could be a good idea to make use of this to provide a solid foundation for a pipeline.
