@@ -15,7 +15,7 @@ The below is a list of GSS web dissemination examples. It is not necessarily com
 * [DCMS Economic Estimates](https://statistics.culture.gov.uk/data-tools/economic-estimates)
 
 
-## Off-gov.uk stats publications:  
+## Stats publications not on gov.uk:  
 * [HRMC](https://kai-data-exploitation.github.io/monthly-stamp-duty-ns-output/msdlt_spine.html)  
 * [HMRC](https://kai-data-exploitation.github.io/ns-employment-allowance/empall_spine.html)  
 * [All ONS publications](https://www.ons.gov.uk/atoz) for example: [this](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/drugusealcoholandsmoking/bulletins/opinionsandlifestylesurveyadultdrinkinghabitsingreatbritain/2017)  
@@ -23,7 +23,7 @@ The below is a list of GSS web dissemination examples. It is not necessarily com
 * [DCMS](https://statistics.culture.gov.uk/publications/gva-2017)
 
 
-## gov.uk HTML publications:  
+## gov.uk "HTML" (markdown) publications:  
 * [DEFRA](https://www.gov.uk/government/statistics/food-statistics-pocketbook-2017)
 * [DEFRA](https://www.gov.uk/government/statistics/family-food-201617)
 * [DEFRA](https://www.gov.uk/government/statistics/food-chain-productivity)
