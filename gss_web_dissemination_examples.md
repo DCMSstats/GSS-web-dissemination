@@ -25,7 +25,7 @@ The below is a list of GSS web dissemination examples. It is not necessarily com
 * [DEFRA](https://www.gov.uk/government/statistics/food-statistics-pocketbook-2017)
 * [DEFRA](https://www.gov.uk/government/statistics/family-food-201617)
 * [DEFRA](https://www.gov.uk/government/statistics/food-chain-productivity)
-*[Welsh Government](https://gov.wales/national-curriculum-teacher-assessments-non-core-subjects-2019-html)
-*[Welsh Government](https://gov.wales/analysis-flying-start-outcomes-using-linked-data-emerging-findings-html)
-*[Welsh Government](https://gov.wales/road-traffic-2018-html)
+* [Welsh Government](https://gov.wales/national-curriculum-teacher-assessments-non-core-subjects-2019-html)
+* [Welsh Government](https://gov.wales/analysis-flying-start-outcomes-using-linked-data-emerging-findings-html)
+* [Welsh Government](https://gov.wales/road-traffic-2018-html)
 
